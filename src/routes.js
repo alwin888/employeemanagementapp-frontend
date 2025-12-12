@@ -37,7 +37,10 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
-import Tables from "layouts/tables";
+import Departments from "layouts/departments";
+import Employee from "layouts/employee";
+import FindEmployee from "layouts/findemployee";
+import PromoteEmployee from "layouts/promote";
 import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
@@ -59,11 +62,35 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Tables",
-    key: "tables",
+    name: "List of Departments",
+    key: "departments",
     icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/tables",
-    component: <Tables />,
+    route: "/departments",
+    component: <Departments />,
+  },
+  {
+    type: "collapse",
+    name: "Employee by Department",
+    key: "employee",
+    icon: <Icon fontSize="small">person</Icon>,
+    route: "/employee",
+    component: <Employee />,
+  },
+  {
+    type: "collapse",
+    name: "Find Employee",
+    key: "findemployee",
+    icon: <Icon fontSize="small">person_search</Icon>,
+    route: "/findemployee",
+    component: <FindEmployee />,
+  },
+  {
+    type: "collapse",
+    name: "Promote Employee",
+    key: "promoteemployee",
+    icon: <Icon fontSize="small">swipe_up_alt</Icon>,
+    route: "/promoteemployee",
+    component: <PromoteEmployee />,
   },
   {
     type: "collapse",
