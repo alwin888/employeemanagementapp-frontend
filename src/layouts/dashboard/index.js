@@ -1,17 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import MDBox from "components/MDBox";
@@ -25,60 +11,123 @@ export default function Dashboard() {
     <DashboardLayout>
       <DashboardNavbar />
 
-      <MDBox py={6}>
-        <Grid container spacing={3}>
+      <MDBox py={6} px={2}>
+        <Grid container spacing={4} justifyContent="center">
           {/* Welcome Banner */}
           <Grid item xs={12}>
-            <Card className="p-6 rounded-2xl shadow-md flex flex-col items-center text-center">
-              <MDTypography variant="h4" className="mb-2">
-                Welcome to the Employee Dashboard
-              </MDTypography>
-              <MDTypography variant="body1">
-                Use the navigation menu to manage employees, departments, promotions, and more.
-              </MDTypography>
+            <Card>
+              <MDBox
+                p={4}
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                textAlign="center"
+              >
+                <MDTypography variant="h4" gutterBottom>
+                  Employee Management System
+                </MDTypography>
+                <MDTypography variant="body1" color="text">
+                  Centralized dashboard to manage employees, departments, promotions, and employment
+                  history.
+                </MDTypography>
+              </MDBox>
             </Card>
           </Grid>
 
-          {/* Quick Stats */}
-          <Grid item xs={12} md={4}>
-            <Card className="p-6 rounded-2xl shadow-md flex flex-col items-center text-center">
-              <MDTypography variant="h6">Total Employees</MDTypography>
-              <MDTypography variant="h4" className="mt-2 font-bold">
-                12,000
-              </MDTypography>
+          {/* Core Features */}
+          <Grid item xs={12} md={3}>
+            <Card>
+              <MDBox
+                p={3}
+                height="100%"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+                textAlign="center"
+              >
+                <MDTypography variant="h6" gutterBottom>
+                  Browse Employees
+                </MDTypography>
+                <MDTypography variant="body2" color="text">
+                  View employees by department with paginated results.
+                </MDTypography>
+                <MDTypography variant="caption" mt={1} color="info">
+                  GET /employees?deptNo
+                </MDTypography>
+              </MDBox>
             </Card>
           </Grid>
 
-          <Grid item xs={12} md={4}>
-            <Card className="p-6 rounded-2xl shadow-md flex flex-col items-center text-center">
-              <MDTypography variant="h6">Departments</MDTypography>
-              <MDTypography variant="h4" className="mt-2 font-bold">
-                9
-              </MDTypography>
+          <Grid item xs={12} md={3}>
+            <Card>
+              <MDBox
+                p={3}
+                height="100%"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+                textAlign="center"
+              >
+                <MDTypography variant="h6" gutterBottom>
+                  Find Employee
+                </MDTypography>
+                <MDTypography variant="body2" color="text">
+                  Search for a single employee and view full history.
+                </MDTypography>
+                <MDTypography variant="caption" mt={1} color="info">
+                  GET /employees/{"{"}empNo{"}"}
+                </MDTypography>
+              </MDBox>
             </Card>
           </Grid>
 
-          <Grid item xs={12} md={4}>
-            <Card className="p-6 rounded-2xl shadow-md flex flex-col items-right text-right">
-              <MDTypography variant="h6">Managers</MDTypography>
-              <MDTypography variant="h4" className="mt-2 font-bold">
-                50
-              </MDTypography>
+          <Grid item xs={12} md={3}>
+            <Card>
+              <MDBox
+                p={3}
+                height="100%"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+                textAlign="center"
+              >
+                <MDTypography variant="h6" gutterBottom>
+                  Promote Employee
+                </MDTypography>
+                <MDTypography variant="body2" color="text">
+                  Promote an employee with new title, salary, and department.
+                </MDTypography>
+                <MDTypography variant="caption" mt={1} color="info">
+                  POST /employees/promote
+                </MDTypography>
+              </MDBox>
             </Card>
           </Grid>
 
-          {/* Helpful Info */}
-          <Grid item xs={12}>
-            <Card className="p-6 rounded-2xl shadow-md flex flex-col items-center text-center">
-              <MDTypography variant="h5" className="mb-3">
-                Quick Actions
-              </MDTypography>
-              <ul className="list-disc ml-6 text-base">
-                <li>Find an employee by ID</li>
-                <li>Promote an employee</li>
-                <li>Browse department employee lists</li>
-                <li>View employee histories</li>
-              </ul>
+          <Grid item xs={12} md={3}>
+            <Card>
+              <MDBox
+                p={3}
+                height="100%"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+                textAlign="center"
+              >
+                <MDTypography variant="h6" gutterBottom>
+                  Departments
+                </MDTypography>
+                <MDTypography variant="body2" color="text">
+                  Retrieve department information used across the system.
+                </MDTypography>
+                <MDTypography variant="caption" mt={1} color="info">
+                  GET /department
+                </MDTypography>
+              </MDBox>
             </Card>
           </Grid>
         </Grid>

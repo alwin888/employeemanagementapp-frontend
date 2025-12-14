@@ -40,7 +40,7 @@ function Departments() {
                 </MDTypography>
               </MDBox>
 
-              <MDBox pt={3}>
+              <MDBox pt={3} pb={3}>
                 <DataTable
                   table={{ columns, rows }}
                   isSorted={false}
