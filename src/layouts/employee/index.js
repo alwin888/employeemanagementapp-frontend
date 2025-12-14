@@ -95,9 +95,6 @@ function Employees() {
                     size="small"
                     style={{ width: 80 }}
                   />
-                  <Button variant="contained" color="info" onClick={() => refetch()}>
-                    Go
-                  </Button>
                 </MDBox>
 
                 <DataTable

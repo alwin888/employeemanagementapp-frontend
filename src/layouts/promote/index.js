@@ -49,7 +49,7 @@ function PromoteEmployee() {
       empNo: Number(empNo),
       newTitle,
       fromDate,
-      salary: Number(salary),
+      newSalary: Number(salary),
       deptNo,
       manager,
     };
