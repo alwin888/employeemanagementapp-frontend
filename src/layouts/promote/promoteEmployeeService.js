@@ -8,11 +8,20 @@ export async function promoteEmployee(promotionData) {
   });
 
   if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(errorText || "Failed to promote employee");
+    // Handle known status codes explicitly
+    if (response.status === 400) {
+      throw new Error("Invalid input. Please check your entries and try again.");
+    }
+
+    if (response.status === 404) {
+      throw new Error("Employee not found.");
+    }
+
+    // Fallback for other errors
+    throw new Error("Failed to promote employee. Please try again later.");
   }
 
-  // backend may or may not return body
+  // Backend may or may not return body
   try {
     return await response.json();
   } catch {
